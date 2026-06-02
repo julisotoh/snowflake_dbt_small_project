@@ -1,0 +1,40 @@
+name: 'medellin_traffic'
+version: '1.0.0'
+
+
+profile: 'medellin_traffic'
+
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:        
+  - "target"
+  - "dbt_packages"
+
+
+
+models:
+  medellin_traffic:
+
+    staging:
+      +schema: STAGING
+      +materialized: table
+
+    marts:
+      +schema: DDS
+      +materialized: table
+
+      Dimensions:
+        +tags: ['dimensions']
+
+      Facts:
+        +tags: ['facts']
+
+seeds:
+  medellin_traffic:
+    +schema: DDS

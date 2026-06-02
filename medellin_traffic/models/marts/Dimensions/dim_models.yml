@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: Dim_barrio
+    description: Neighborhood dimension
+
+    columns:
+      - name: codigo_comuna
+        description: Unique ID for each neighborhood
+        tests:
+          - not_null
+        relationships:
+          - name: dim_comuna
+            field: codigo_comuna

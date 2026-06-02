@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+
+  - name: raw 
+    
+
+    schema: raw 
+
+    tables:
+
+      - name: raw_incidentes_medellin
+      - name: raw_victimas_incidentes_med
+
+
+
+
+
+
